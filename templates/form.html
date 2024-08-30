@@ -7,6 +7,19 @@
 </head>
 <body>
     <h1>Welcome to the homepage</h1>
-    <p>new screen</p>
+    <form method="post" action="{{url_for('register')}}">
+        <table border="1">
+            <tr>
+                <th>Book Title</th>
+                <th>Author</th>
+            </tr>
+                <tr>
+                    <td><input type="text" name="title"></td>
+                    <td><input type="text" name="author"></td>
+                </tr>
+        </table>
+        <br>
+        <input type="submit" value="登録">
+    </form>
 </body>
 </html>
