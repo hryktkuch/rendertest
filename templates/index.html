@@ -7,18 +7,22 @@
 </head>
 <body>
     <h1>Welcome to the homepage</h1>
-    <table border="1">
-        <tr>
-            <th>Book Title</th>
-            <th>Author</th>
-        </tr>
-        {% for book in books %}
+    {% if books == [] %}
+        <h2>No Books</h2>
+    {% else %}
+        <table border="1">
             <tr>
-                <td>{{ book.title }}</td>
-                <td>{{ book.author }}</td>
+                <th>Book Title</th>
+                <th>Author</th>
             </tr>
-        {% endfor %}
-    </table>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
     <a href="{{url_for('form').replace('/index.cgi/', '/')}}">編集</a>
 </body>
 </html>
