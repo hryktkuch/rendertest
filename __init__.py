@@ -1,2 +1,2 @@
-from flask import db
+from . import db
 db.create_books_table()
